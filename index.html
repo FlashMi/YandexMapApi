@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Яндекс Карты API</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7b67a482-7a85-4a53-a3e8-ca4e67a9d642&lang=ru_RU" type="text/javascript"></script>
+    <style>
+        #map {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [69.34800744713122, 87.75544639594304],
+                zoom: 10
+            });
+
+            var myPlacemark = new ymaps.Placemark([69.34800744713122, 87.75544639594304], {}, {
+                preset: 'islands#redIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+</body>
+</html>
